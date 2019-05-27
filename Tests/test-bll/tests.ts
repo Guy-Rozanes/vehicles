@@ -44,17 +44,6 @@ describe('init objects', async () => {
             expect(result.message).equal('Vehicle has been added');
         })
 
-        it('edit vehicle', async () => {
-            vehiclesAction = new VehiclesActions(stub);
-            let result = await vehiclesAction.editVehicle({
-                id: "9feb6900-7f05-11e9-af62-bb96d9b3e9bc",
-                name: "asdfasdf",
-                timeCreated: new Date(),
-                carType: CarType.SUV,
-                lastSuccessfulConnection: new Date()
-            });
-            expect(result.message).equal('vehicle edited successfully');
-        })
 
     })
 })
