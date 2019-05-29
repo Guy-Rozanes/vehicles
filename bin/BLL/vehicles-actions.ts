@@ -20,7 +20,7 @@ export default class VehiclesActions {
             if (vehcles) {
                 return vehcles;
             } else {
-                throw new Error('Empty vehiclesList');
+                throw new Error('Empty vehicles List');
             }
         } catch (e) {
             throw new DataAccessError(e);
