@@ -4,6 +4,7 @@ import VehicleModel from "../commons/models/vehicle.model";
 import DataAccessError from "../commons/Errors/data-access-error";
 import UserError from "../commons/Errors/user-error";
 import {Errors} from "../../configuration/errors";
+import dateFormat from 'dateformat';
 
 export default class VehiclesActions {
 
@@ -38,6 +39,7 @@ export default class VehiclesActions {
 
     addVehicle = async (vehicle: VehicleModel): Promise<any> => {
         try {
+
             await this._storageHandler.addVehicle(vehicle);
             return {message: 'Vehicle has been added'}
         } catch (e) {
@@ -69,4 +71,5 @@ export default class VehiclesActions {
             throw new UserError(Errors.VALIDATION_ERR);
         }
     }
+
 }
